@@ -1,0 +1,601 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Cairo:wght@700&family=Epilogue&family=Inter:wght@300&family=Jomhuria&family=Lato&family=Montserrat:wght@500&family=Mukta&family=Mulish&family=Open+Sans:ital,wght@1,300&family=Orbitron&family=Poppins:wght@200&family=Quicksand:wght@300&family=Roboto:wght@100;400&family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+  --step-bg-color: #c6e6ff;
+  --option: #032959;
+  --active: #f8f9fe;
+  --border: #534c9d;
+  --next-btn: #02295b;
+  --next-btn-hovered: #184890;
+  --confirm-btn: #4c3eff;
+  --confirm-btn-hovered: #938cfe;
+  --back-btn-hover: #142646;
+  --checked-check-box: #4d3fec;
+  --normal-form-border: #efeff1;
+  --false-form-border: #f72d47;
+  --add-ons-price-color: #4840ad;
+  --title: #002151;
+  --grey: rgb(173, 173, 173);
+  font-size: 62.5%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+body {
+  background-color: #eef5ff;
+  font-family: "Ubuntu ", sans-serif;
+  overflow: hidden;
+  width: 100%;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+}
+
+.container {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 1050px;
+  min-width: 90rem;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.content {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+/* 
+.sidebar {
+  display: grid;
+  align-content: start;
+  gap: 4rem;
+  background-image: url(./assets/images/bg-sidebar-desktop.svg);
+  height: 60rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 5rem 0rem 3rem 4rem;
+  border-radius: 2rem;
+} */
+
+.sidebar {
+  width: 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 10vh; /* Adjust as needed */
+  display: grid;
+  align-content: start;
+  gap: 4rem;
+  background-image: url(./assets/images/bg-sidebar-desktop.svg);
+  height: 60rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 5rem 0rem 3rem 4rem;
+  border-radius: 2rem;
+}
+
+.step {
+  display: flex;
+  gap: 2rem;
+  height: fit-content;
+  width: max-content;
+}
+
+.step-number {
+  color: white;
+  text-align: center;
+  border: 1px solid white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  padding: 1rem;
+  align-self: center;
+  font-weight: bold;
+}
+
+.step-number.active {
+  background-color: var(--step-bg-color);
+  border: 1px solid transparent;
+  color: black;
+}
+
+.sidebar .step .inside-container {
+  text-transform: uppercase;
+}
+
+.sidebar .step .inside-container h5 {
+  margin: 0;
+  color: #bbbbbb;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.sidebar .step .inside-container div {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+
+.main {
+  background-color: white;
+  width: 54rem;
+  position: absolute;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.main .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main.none,
+.confirm-footer.none {
+  display: none;
+}
+
+.main.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+h3 {
+  font-size: 3.7rem;
+  margin-bottom: 1rem;
+  color: var(--title);
+}
+
+.main-description {
+  color: var(--grey);
+  font-size: large;
+}
+
+.main2 .main-description {
+  font-size: larger;
+}
+
+form {
+  display: grid;
+  margin-top: 6rem;
+  gap: 3rem;
+}
+
+form > div {
+  display: grid;
+  gap: 1rem;
+}
+
+form .inside-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .inside-container span {
+  color: red;
+  font-weight: bold;
+}
+
+form div label {
+  color: var(--title);
+  font-weight: bold;
+}
+
+form div input {
+  padding: 1.5rem;
+  border-radius: 0.7rem;
+  border: 2px solid #cdcdcd;
+  outline: none;
+  font-weight: bold;
+  font-size: medium;
+}
+
+form div input.invalid {
+  border: 2px solid red;
+}
+
+form div input::placeholder {
+  color: #ababab;
+}
+
+form div input:focus {
+  border: 2px solid var(--border);
+}
+
+form .footer {
+  justify-content: end !important;
+  align-items: end !important;
+  height: 260%;
+  /* margin-top: 8rem; */
+}
+
+.main2 .options {
+  display: flex;
+  gap: 2rem;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+.main2 .options .option {
+  border: 1px solid #ddd;
+  border-radius: 0.7rem;
+  padding: 2rem;
+  width: calc(100% / 1);
+  display: grid;
+  gap: 6.3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.main2 .options .option.active {
+  background-color: var(--active);
+  border: 1px solid var(--border);
+}
+
+.main2 .options .option:hover {
+  border: 1px solid var(--border);
+}
+
+.main2 .options .option img {
+  width: 4.5rem;
+}
+
+.main2 .options .option > div {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.main2 .options .option .title {
+  color: var(--title);
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+.main2 .options .option .price {
+  color: var(--grey);
+  font-weight: bold;
+}
+
+.main2 .two-months-free {
+  color: var(--title);
+  font-weight: bold;
+  display: none;
+  font-size: 1.4rem;
+}
+
+.main2 .two-months-free.visible {
+  display: block;
+}
+
+.main2 .time {
+  background-color: var(--active);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
+  gap: 4rem;
+}
+
+.main2 .or {
+  position: absolute;
+  left: -9000px;
+  opacity: 0;
+}
+
+.main2 .or-label {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  right: 1.7rem;
+  align-self: start;
+}
+
+.main2 .or + .or-label::before {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 22px;
+  border-radius: 25px;
+  background-color: var(--option);
+}
+
+.main2 .or:focus-visible + .or-label::before {
+  outline: var(--border-width, 3px) solid var(--false-form-border);
+}
+
+.main2 .or + .or-label::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  left: 5.5px;
+  transition: cubic-bezier(0.46, 0, 0.07, 1.4) 0.5s;
+  top: 4.3px;
+}
+
+.main2 .or:checked + .or-label::after {
+  left: 23px;
+}
+
+.main2 .time span {
+  color: var(--grey);
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: default;
+}
+
+.main2 .time span.active {
+  color: var(--title);
+}
+
+.main2 .footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 13.3rem;
+}
+
+.main3 .add-ons {
+  display: grid;
+  gap: 2rem;
+  margin-top: 5.5rem;
+}
+
+.main3 .add-on {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 0.7rem;
+  padding: 2.2rem 3rem;
+  transition: 0.3s;
+}
+
+.main3 .add-on:hover {
+  border: 1px solid var(--border);
+}
+
+.main3 .add-on.active {
+  background-color: var(--active);
+  border: 1px solid var(--border);
+}
+
+.main3 .add-on > div:first-child {
+  display: flex;
+  gap: 3rem;
+}
+
+.main3 .add-on-checkbox {
+  position: absolute;
+  left: -9000px;
+  opacity: 0;
+}
+
+.main3 .add-on-label {
+  position: relative;
+  align-self: center;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--grey);
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.main3 .add-on-checkbox:checked + .add-on-label {
+  background-image: url(./assets/images/icon-checkmark.svg);
+  border: 1px solid transparent;
+  background-color: var(--checked-check-box);
+}
+
+.main3 .add-on > div:first-child > div {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.main3 .add-on .title {
+  color: var(--title);
+  font-size: 1.9rem;
+}
+
+.main3 .add-on .description {
+  color: var(--grey);
+}
+
+.main3 .add-on .add-on-price {
+  color: #7669ea;
+}
+
+.main3 .footer {
+  margin-top: 9.1rem;
+}
+
+.main4 .main-description {
+  font-size: larger;
+}
+
+.main4 .receipt {
+  background-color: var(--active);
+  padding: 2.5rem;
+  margin-top: 5.5rem;
+  border-radius: 1rem;
+}
+
+.main4 .receipt .main-plan {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.7rem;
+}
+
+.main4 .receipt .main-plan > div:first-child {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.main4 .receipt .main-plan span {
+  color: var(--title);
+  font-weight: bolder;
+  font-size: 1.8rem;
+}
+
+.main4 .receipt .main-plan .change {
+  text-decoration: underline;
+  color: #979797;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  width: fit-content;
+}
+
+.main4 .receipt .main-plan .change:hover {
+  color: #7669ea;
+}
+
+.main4 .receipt .main-plan .plan-price {
+  align-self: center;
+  color: var(--title);
+  font-weight: 900;
+}
+
+.main4 .receipt hr {
+  border: 1px solid #ddd;
+}
+
+.main4 .receipt .inside-container {
+  display: grid;
+  margin-top: 3rem;
+  gap: 2rem;
+}
+
+.main4 .receipt .sub-add-on {
+  display: none;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.main4 .receipt .sub-add-on.visible {
+  display: flex;
+}
+
+.main4 .receipt .sub-add-on .title {
+  color: #979797;
+}
+
+.main4 .receipt .sub-add-on .price {
+  color: var(--title);
+}
+
+.main4 .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 0 2rem;
+}
+
+.main4 .total .title {
+  font-weight: bold;
+  color: #979797;
+}
+
+.main4 .total .price {
+  color: var(--confirm-btn);
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.main5 {
+  align-self: center;
+  text-align: center;
+}
+
+.main5 img {
+  width: 8.5rem;
+}
+
+.main5 .thank-you {
+  color: var(--title);
+  font-weight: bolder;
+  font-size: 3rem;
+  margin-top: 3rem;
+}
+
+.main5 p {
+  color: var(--grey);
+  font-weight: bolder;
+  font-size: 1.75rem;
+}
+
+.confirm-footer {
+  position: absolute;
+  bottom: 14px;
+  width: 540px;
+  display: flex;
+  pointer-events: none;
+  opacity: 0;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+.main4.active + .confirm-footer {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.next {
+  background-color: var(--next-btn);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px 30px;
+  border-radius: 7px;
+  transition: 0.3s;
+  font-size: 1.55rem;
+  font-weight: 600;
+}
+
+.next:hover {
+  background-color: var(--next-btn-hovered);
+}
+
+.back {
+  background-color: transparent;
+  color: var(--grey);
+  border: none;
+  cursor: pointer;
+  font-size: 1.55rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.back:hover {
+  color: var(--back-btn-hover);
+}
+
+.confirm {
+  background-color: var(--confirm-btn);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px 37px;
+  border-radius: 7px;
+  font-size: 1.55rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.confirm:hover {
+  background-color: var(--confirm-btn-hovered);
+}

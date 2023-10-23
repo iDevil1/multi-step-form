@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="main.js"></script>
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar start -->
+
+      <div class="sidebar">
+        <div class="step step1">
+          <div class="step-number active">1</div>
+          <div class="inside-container">
+            <h5>Step 1</h5>
+            <div>Your Info</div>
+          </div>
+        </div>
+
+        <div class="step step2">
+          <div class="step-number">2</div>
+          <div class="inside-container">
+            <h5>Step 2</h5>
+            <div>Select Plan</div>
+          </div>
+        </div>
+
+        <div class="step step3">
+          <div class="step-number">3</div>
+          <div class="inside-container">
+            <h5>Step 3</h5>
+            <div>Add-ons</div>
+          </div>
+        </div>
+
+        <div class="step step4">
+          <div class="step-number">4</div>
+          <div class="inside-container">
+            <h5>Step 4</h5>
+            <div>Summary</div>
+          </div>
+        </div>
+      </div>
+      <!-- Sidebar end -->
+
+      <div class="content">
+        <!-- Step 1 start -->
+
+        <div class="main main1 active">
+          <h3>Personal info</h3>
+          <div class="main-description">
+            Please provide your name, email address and phone number.
+          </div>
+          <form>
+            <div>
+              <div class="inside-container">
+                <label for="name">Name</label>
+                <span></span>
+              </div>
+              <input
+                type="text"
+                class="name info-input"
+                id="name"
+                name="name"
+                maxlength="20"
+                placeholder="e.g. Stephan King"
+              />
+            </div>
+            <div>
+              <div class="inside-container">
+                <label for="email">Email Address</label>
+                <span></span>
+              </div>
+              <input
+                type="text"
+                class="email info-input"
+                id="email"
+                name="email"
+                placeholder="e.g.stephanking@lorem.com"
+              />
+            </div>
+            <div>
+              <div class="inside-container">
+                <label for="phone">Phone number</label>
+                <span></span>
+              </div>
+              <input
+                type="text"
+                class="phone info-input"
+                id="phone"
+                name="phone"
+                placeholder="e.g. +123 456 7890"
+              />
+            </div>
+            <div class="footer">
+              <button class="next next-step">Next Step</button>
+            </div>
+          </form>
+        </div>
+        <!-- Step 1 end -->
+
+        <!-- Step 2 start -->
+
+        <div class="main main2">
+          <h3>Select your plan</h3>
+          <div class="main-description">
+            You have the option of monthly or yearly billing.
+          </div>
+          <div class="options">
+            <div class="option option1 active" tabindex="0">
+              <img src="./assets/images/icon-arcade.svg" alt="" />
+              <div>
+                <div class="title">Arcade</div>
+                <div class="price" data-monthly="$9/mo" data-yearly="$90/yr">
+                  $9/mo
+                </div>
+                <div class="two-months-free">2 months free</div>
+              </div>
+            </div>
+
+            <div class="option option2" tabindex="0">
+              <img src="./assets/images/icon-advanced.svg" alt="" />
+              <div>
+                <div class="title">Advanced</div>
+                <div class="price" data-monthly="$12/mo" data-yearly="$120/yr">
+                  $12/mo
+                </div>
+                <div class="two-months-free">2 months free</div>
+              </div>
+            </div>
+            <div class="option option3" tabindex="0">
+              <img src="./assets/images/icon-pro.svg" alt="" />
+              <div>
+                <div class="title">Pro</div>
+                <div class="price" data-monthly="$15/mo" data-yearly="$150/yr">
+                  $15/mo
+                </div>
+                <div class="two-months-free">2 months free</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="time">
+            <span class="monthly active">Monthly</span>
+            <input type="checkbox" class="or" id="or" />
+            <label for="or" class="or-label" x></label>
+            <span class="yearly">Yearly</span>
+          </div>
+
+          <div class="footer">
+            <button class="back">Go Back</button>
+            <button class="next next-step">Next Step</button>
+          </div>
+        </div>
+        <!-- Step 2 end -->
+
+        <!-- Step 3 start -->
+
+        <div class="main main3">
+          <h3>Pick add-ons</h3>
+          <div class="main-description">
+            Add-ons help enhance your gaming experience.
+          </div>
+          <div class="add-ons">
+            <div
+              class="add-on add-on-1"
+              data-id="0"
+              data-price-monthly="1"
+              data-price-yearly="10"
+              tabindex="0"
+            >
+              <div>
+                <input
+                  type="checkbox"
+                  class="add-on-checkbox"
+                  id="add-on-checkbox-1"
+                />
+                <label for="add-on-checkbox-1" class="add-on-label"></label>
+                <div>
+                  <div class="title">Online service</div>
+                  <div class="description">Access to multiplayer games</div>
+                </div>
+              </div>
+              <div
+                class="add-on-price"
+                data-monthly="+$1/mo"
+                data-yearly="+$10/yr"
+              >
+                +$1/mo
+              </div>
+            </div>
+            <div
+              class="add-on add-on-2"
+              data-id="1"
+              data-price-monthly="1.9"
+              data-price-yearly="19"
+              tabindex="0"
+            >
+              <div>
+                <input
+                  type="checkbox"
+                  class="add-on-checkbox"
+                  id="add-on-checkbox-2"
+                />
+                <label for="add-on-checkbox-2" class="add-on-label"></label>
+                <div>
+                  <div class="title">Larger storage</div>
+                  <div class="description">Extra 1TB of cloud save</div>
+                </div>
+              </div>
+              <div
+                class="add-on-price duplicate"
+                data-monthly="+$2/mo"
+                data-yearly="+$20/yr"
+              >
+                +$2/mo
+              </div>
+            </div>
+
+            <div
+              class="add-on add-on-3"
+              data-id="2"
+              data-price-monthly="2"
+              data-price-yearly="20"
+              tabindex="0"
+            >
+              <div>
+                <input
+                  type="checkbox"
+                  class="add-on-checkbox"
+                  id="add-on-checkbox-3"
+                />
+                <label for="add-on-checkbox-3" class="add-on-label"></label>
+                <div>
+                  <div class="title">Customizable Profile</div>
+                  <div class="description">Custom theme on your profile</div>
+                </div>
+              </div>
+              <div
+                class="add-on-price duplicate"
+                data-monthly="+$2/mo"
+                data-yearly="+$20/yr"
+              >
+                +$2/mo
+              </div>
+            </div>
+            <div class="footer">
+              <button class="back">Go Back</button>
+              <button class="next next-step">Next Step</button>
+            </div>
+          </div>
+        </div>
+        <!-- Step 3 end -->
+
+        <!-- Step 4 start -->
+        <div class="main main4">
+          <h3>Finishing up</h3>
+          <div class="main-description">
+            Double-check everything looks OK before confirming.
+          </div>
+          <!-- Dynamically add subscription and add-on selections here -->
+          <div class="receipt">
+            <div class="main-plan">
+              <div>
+                <div>
+                  <span class="plan-type-option">Arcade</span>
+                  <span
+                    class="plan-billing-option"
+                    data-monthly="(Monthly)"
+                    data-yearly="(Yearly)"
+                    >(Monthly)</span
+                  >
+                </div>
+                <div class="change" tabindex="0">Change</div>
+              </div>
+              <div class="plan-price">$9/mo</div>
+            </div>
+            <hr />
+            <div class="inside-container">
+              <div class="sub-add-on">
+                <div class="title">Online Service</div>
+                <div
+                  class="sub-add-on-price"
+                  data-monthly="+$1/mo"
+                  data-yearly="+$10/yr"
+                  data-price-monthly="1"
+                  data-price-yearly="10"
+                >
+                  +$1/mo
+                </div>
+              </div>
+              <div class="sub-add-on">
+                <div class="title">Local Storage</div>
+                <div
+                  class="sub-add-on-price"
+                  data-monthly="+$2/mo"
+                  data-yearly="+$20/yr"
+                  data-price-monthly="1.9"
+                  data-price-yearly="19.9"
+                >
+                  +$2/mo
+                </div>
+              </div>
+              <div class="sub-add-on">
+                <div class="title">Customizable Profile</div>
+                <div
+                  class="sub-add-on-price"
+                  data-monthly="+$2/mo"
+                  data-yearly="+$20/yr"
+                  data-price-monthly="2"
+                  data-price-yearly="20"
+                >
+                  +$2/mo
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="total">
+            <div class="title">Total (per month)</div>
+            <div class="total-price price" data-total>
+              $<span>9</span><span>/mo</span>
+            </div>
+          </div>
+        </div>
+        <div class="confirm-footer">
+          <button class="back">Go Back</button>
+          <button class="confirm next-step">Confirm</button>
+        </div>
+        <!-- Step 4 end -->
+
+        <!-- Step 5 start -->
+        <div class="main main5">
+          <div>
+            <img src="./assets/images/icon-thank-you.svg" alt="" />
+          </div>
+          <div class="thank-you">Thank you!</div>
+          <p>
+            Thanks for confirming your subscription! We hope you have fun using
+            our platform. If you ever need support, please feel free to email us
+            at support@loremgaming.com.
+          </p>
+        </div>
+        <!-- Step 5 end -->
+      </div>
+    </div>
+  </body>
+</html>
